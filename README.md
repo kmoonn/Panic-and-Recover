@@ -1,6 +1,8 @@
 # Panic-and-Recover 🚑➡️💪
 
-"**From panic to recovery**" - 记录开发中的崩溃瞬间与优雅解决方案
+"**From panic to recovery**"
+
+记录开发中的崩溃瞬间与优雅解决方案
 
 仓库名称灵感来源于Go语言经典梗，指从崩溃中恢复。
 
