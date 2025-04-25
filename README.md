@@ -22,7 +22,7 @@
 
 ## 详细清单
 ### 计算机网络
-[1. TCP 的 Keepalive 和 Keep-Alive 真的只差一个横杠吗 ?](computer_network/)
+[1. TCP 的 Keepalive 和 HTTP 的 Keep-Alive 真的只差一个横杠吗?](computer_network/1.%20TCP%20的%20Keepalive%20和%20HTTP%20的%20Keep-Alive%20真的只差一个横杠吗？.md)
 ### Java
 ### JavaScript
 ### 微信小程序
@@ -37,7 +37,7 @@
 ### MySQL
 [1. MySQL中存储时间日期到底选择哪种类型](mysql/1.%20MySQL中存储时间日期到底选择哪种类型.md)
 
-[2. int(1) 和 int(10) 区别是什么 ? int 类型到底需不需要设置长度](mysql/)
+[2. int(1) 和 int(10) 区别是什么 ? int 类型到底需不需要设置长度](mysql/2.%20int%20(1)%20%20和%20int%20(10)%20区别是什么？int%20类型到底需不需要设置长度.md)
 
 ### Python
 [1. 读写Excel选择哪个第三方库的最佳实践](python/1.%20读写Excel选择哪个第三方库的最佳实践.md)
