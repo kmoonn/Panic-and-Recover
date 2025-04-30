@@ -18,6 +18,7 @@
 ### [微信小程序](#微信小程序)
 ### [MySQL](#MySQL)
 ### [Python](#Python)
+### [开发](#Development)
 ### [协议、标准与规范](#协议、标准与规范)
 
 ## 详细清单
@@ -43,6 +44,9 @@
 
 ### Python
 [1. 读写Excel选择哪个第三方库的最佳实践](python/1.%20读写Excel选择哪个第三方库的最佳实践.md)
+
+### 开发
+[1. sso 单点登录/统一身份认证登录初认识]()
 
 ### 协议、标准与规范
 [1. 如何设计API才能算满足Restful API风格](protocols、standards、regulations/1.%20如何设计API才能算满足Restful%20API风格.md)
