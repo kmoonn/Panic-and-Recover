@@ -47,6 +47,7 @@
 
 ### 开发
 [1. sso 单点登录/统一身份认证登录初认识]()
+[2. 跨域 CORS 问题一探究竟+解决方案]()
 
 ### 协议、标准与规范
 [1. 如何设计API才能算满足Restful API风格](protocols、standards、regulations/1.%20如何设计API才能算满足Restful%20API风格.md)
