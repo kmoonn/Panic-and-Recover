@@ -1,24 +1,42 @@
 # Java
 
-## 异常
+## 区别类
 
-- [Java 中 Exception 和 Error 的区别]()
+- [基本数据类型和引用类型的区别](基本数据类型和引用类型的区别.md)
+- [接口和抽象类的区别]()
+- [重载和重写的区别]()
+- [浅拷贝和深拷贝的区别]()
+- [String、StringBuilder和StringBuffer的区别](String、StringBuilder和StringBuffer的区别.md)
+- [equals() 和 == 的区别](equals()和==的区别.md)
+- [final、finally、finalize 的区别](final、finally、finalize的区别.md)
+- [Exception 和 Error 的区别](Exception和Error的区别.md)
+- [Checked Exception 和 Unchecked Exception 的区别]()
+- [throws 与 throw 的区别]()
+- [ArrayList 和 LinkedList 的区别](ArrayList和LinkedList的区别.md)
+- [HashMap 1.7 和 1.8 的区别](HashMap1.7和1.8的区别.md)
+- [HashMap、HashSet、TreeMap、LinkedHashMap 区别]()
+- [HashMap 和 ConcurrentHashMap 的区别](HashMap和ConcurrentHashMap的区别.md)
+- [synchronized、ReentrantLock、volatile 的区别](synchronized、ReentrantLock和volatile的区别.md)
+- [Thread、Runnable、Callable 的区别]()
+- [InputStream 和 Reader 区别]()
+- [BIO、NIO、AIO 区别]()
+- [static、instance、this 的区别]()
+- 
 
-## JMM
+## 源码类
 
-- [JMM 内存模型]()
+- [ArrayList 插入流程](ArrayList插入流程.md)
+- [HashMap 扩容机制]()
+- [HashMap 哈希冲突解决方式]()
 
-## 并发
+## 底层类
 
-- [原子性、可见性、有序性三大问题]()
-- [Java 中实现并发同步的方法](Java%20中实现并发同步的方法.md)
-- [synchronized 和 ReentrantLock 的区别](synchronized%20和%20ReentrantLock%20的区别.md)
+- [Java 内存模型（JMM）]()
 
-## JVM
+## 新特性
 
-- [JVM 内存区域划分,哪些区域会发生 OOM ？]()
-- [GC 回收器有哪些？各有什么特点？]()
-
-## 运维
-
-- [Java 程序运行缓慢诊断思路]()
+- [Lambda 表达式]()
+- [Stream API]()
+- [Optional]()
+- [默认方法]()
+- [函数式接口]()

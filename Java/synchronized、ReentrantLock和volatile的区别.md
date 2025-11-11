@@ -1,4 +1,4 @@
-# synchronized 和 ReentrantLock 的区别
+# synchronized、ReentrantLock 和 volatile 的区别
 
 二者都是 Java 中的常用**并发同步**手段。
 
