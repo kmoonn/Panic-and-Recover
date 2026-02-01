@@ -15,7 +15,7 @@
 ## 目录
 
 ### [计算机网络](#计算机网络)
-### [Java](#Java)
+### [Java](java/README.md)
 ### [MySQL](#MySQL)
 ### [JavaScript](#JavaScript)
 ### [微信小程序](#微信小程序)

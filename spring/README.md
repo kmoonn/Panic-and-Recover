@@ -19,11 +19,20 @@
 - [事务不生效的情况]()
 - [如何实现两个独立的事务]()
 
+## Spring MVC
+
+- [MVC 分层架构]()
+
 ## Spring Boot
 
 - [Spring Boot 注解]()
 - [Spring 与 Spring Boot 的区别](spring_boot/Spring与SpringBoot的区别.md)
 
+## Spring Cloud
+
+- [负载均衡算法]()
+- [熔断]()
+- [降级]()
 
 ---
 - [Spring 3 种配置方式](Spring3种配置方式.md)

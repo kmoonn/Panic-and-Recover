@@ -40,6 +40,7 @@
 - [SPI]()
 - [序列化、反序列化]()
 - [语法糖]()
+- [常用工具类](basics/Java常用工具类.md)
 
 ## 集合
 
@@ -49,6 +50,7 @@
     - ⭐[ArrayList](collections/ArrayList.md)
     - ⭐[LinkedList](collections/LinkedList.md)
     - [ArrayList 和 LinkedList 的区别](collections/ArrayList和LinkedList的区别.md)
+    - [CopyOnWriteArrayList]()
   - Set 接口
     - [HashSet](collections/HashSet.md)
       - [LinkedHashSet](collections/LinkedHashSet.md)
@@ -87,10 +89,10 @@
 - [协程](concurrency/协程.md)
 - [进程、协程与线程的区别](concurrency/进程、协程与线程的区别.md)
 - [并行与并发的区别](concurrency/并行与并发的区别.md)
-- 线程池
-  - [核心参数]()
-  - [工作流程]()
-  - [拒绝策略]()
+- [线程池](concurrency/ThreadPool.md)
+  - [核心参数](concurrency/ThreadPool_CoreParameters.md)
+  - [工作原理]()
+  - [拒绝策略](concurrency/ThreadPool_RejectionPolicy.md)
 - 锁
   - [乐观锁]()
   - [悲观锁]()
@@ -99,13 +101,10 @@
 ## JVM
 
 - [内存模型](virtual_machine/内存模型.md)
+- [类加载机制]()
 - [垃圾回收]()
   - [垃圾回收算法]()
   - [垃圾回收器]()
-- [类加载机制]()
-- [JVM 参数]()
-  - [性能调优]()
-- [线上问题排查]()
 
 ## 新特性
 
