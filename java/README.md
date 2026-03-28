@@ -10,9 +10,9 @@
 - [JDK、JRE、JVM、JIT]()
 - [字节码]()
 - [JIT]()
-- [基本数据类型](basics/基本数据类型.md)
-  - [包装类](basics/包装类.md)
-  - [BigDecimal](basics/BigDecimal.md)
+- [基本数据类型](0-basics/基本数据类型.md)
+  - [包装类](0-basics/包装类.md)
+  - [BigDecimal](0-basics/BigDecimal.md)
 - [成员变量、局部变量、静态变量]()
 - [静态方法、实例方法]()
 - [重载与重写的区别]()
@@ -20,9 +20,9 @@
 - [封装、继承、多态]()
 - [接口与抽象类的区别]()
 - [深拷贝与浅拷贝的区别]()
-- [Object 类](basics/Objects.md)
+- [Object 类](0-basics/Objects.md)
   - [== 与 equals() 的区别]()
-  - [hashCode()](basics/hashCode.md)
+  - [hashCode()](0-basics/hashCode.md)
 - [String 类]()
   - [String、StringBuffer、StringBuilder]()
   - [字符串常量池]()
@@ -40,7 +40,7 @@
 - [SPI]()
 - [序列化、反序列化]()
 - [语法糖]()
-- [常用工具类](basics/Java常用工具类.md)
+- [常用工具类](0-basics/Java常用工具类.md)
 
 ## 集合
 
