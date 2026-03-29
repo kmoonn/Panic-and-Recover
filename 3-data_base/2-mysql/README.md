@@ -2,9 +2,9 @@
 
 ## 存储引擎
 
-- [InnoDB](1-engine/InnoDB.md)
-- [MyISAM](1-engine/MyISAM.md)
-- [InnoDB 与 MyISAM 的区别](1-engine/InnoDBy与MyISAM的区别.md)
+- [InnoDB](1-storage_engine/InnoDB.md)
+- [MyISAM](1-storage_engine/MyISAM.md)
+- [InnoDB 与 MyISAM 的区别](1-storage_engine/InnoDBy与MyISAM的区别.md)
 - [MVCC]()
 
 ## 索引
