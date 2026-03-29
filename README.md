@@ -25,7 +25,7 @@
 
 ## 详细清单
 ### 计算机网络
-[1. TCP 的 Keepalive 和 HTTP 的 Keep-Alive 真的只差一个横杠吗?](computer_network/1.%20TCP%20的%20Keepalive%20和%20HTTP%20的%20Keep-Alive%20真的只差一个横杠吗？.md)
+[1. TCP 的 Keepalive 和 HTTP 的 Keep-Alive 真的只差一个横杠吗?](1-computer_network/1.%20TCP%20的%20Keepalive%20和%20HTTP%20的%20Keep-Alive%20真的只差一个横杠吗？.md)
 ### Java
 ### JavaScript
 ### 微信小程序
