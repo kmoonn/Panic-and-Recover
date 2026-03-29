@@ -2,8 +2,8 @@
 
 ## 存储引擎
 
-- [InnoDB](1-storage_engine/InnoDB.md)
-- [MyISAM](1-storage_engine/MyISAM.md)
+- [InnoDB]()
+- [MyISAM]()
 - [InnoDB 与 MyISAM 的区别](1-storage_engine/InnoDBy与MyISAM的区别.md)
 - [MVCC]()
 
@@ -17,7 +17,7 @@
 
 ## 事务
 
-- [ACID 四大特性](3-transaction/ACID.md)
+- [ACID]()
 - [隔离级别]()
 
 ## 锁

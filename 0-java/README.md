@@ -1,0 +1,121 @@
+# Java
+
+## 基础
+
+- [Java 语言特点]()
+  - [Java 与 C++ 的区别]()
+- [Java SE]()
+- [Java EE]()
+- [JMM]()
+- [JDK、JRE、JVM、JIT]()
+- [字节码]()
+- [JIT]()
+- [基本数据类型](0-basics/基本数据类型.md)
+  - [包装类](0-basics/包装类.md)
+  - [BigDecimal](0-basics/BigDecimal.md)
+- [成员变量、局部变量、静态变量]()
+- [静态方法、实例方法]()
+- [重载与重写的区别]()
+- [OOP、POP]()
+- [封装、继承、多态]()
+- [接口与抽象类的区别]()
+- [深拷贝与浅拷贝的区别]()
+- [Object 类](0-basics/Objects.md)
+  - [== 与 equals() 的区别]()
+  - [hashCode()](0-basics/hashCode.md)
+- [String 类]()
+  - [String、StringBuffer、StringBuilder]()
+  - [字符串常量池]()
+- [异常]()
+  - [Exception 与 Error 的区别]()
+  - [Checked Exception 与 Unchecked Exception 的区别]()
+  - [try-except-finally]()
+  - [try-with-resources]()
+- [泛型]()
+  - [通配符]()
+- ⭐[反射机制]()
+- [代理]()
+  - [动态代理、静态代理]()
+- [注解]()
+- [SPI]()
+- [序列化、反序列化]()
+- [语法糖]()
+- [常用工具类](0-basics/Java常用工具类.md)
+
+## 集合
+
+- Collection
+  - List 接口
+    - [Vector](1-collections/Vector.md)
+    - ⭐[ArrayList](1-collections/ArrayList.md)
+    - ⭐[LinkedList](1-collections/LinkedList.md)
+    - [ArrayList 和 LinkedList 的区别](1-collections/ArrayList和LinkedList的区别.md)
+    - [CopyOnWriteArrayList]()
+  - Set 接口
+    - [HashSet](1-collections/HashSet.md)
+      - [LinkedHashSet](1-collections/LinkedHashSet.md)
+    - [TreeSet](1-collections/TreeSet.md)
+      - [compareTo 和 compare 的区别](1-collections/compareTo和compare的区别.md)
+  - [List 和 Set 的区别](1-collections/List和Set的区别.md)
+- Map
+  - [HashTable](1-collections/HashTable.md)
+  - ⭐[HashMap](1-collections/HashMap.md)
+    - ⭐[HashMap 1.7 和 1.8 的区别](1-collections/HashMap1.7和1.8的区别.md)
+      - [红黑树]()
+    - [LinkedHashMap](1-collections/LinkedHashMap.md)
+  - ⭐[ConcurrentHashMap](1-collections/ConcurrentHashMap.md)
+  - [HashMap 和 ConcurrentHashMap 的区别](1-collections/HashMap和ConcurrentHashMap的区别.md)
+  - [TreeMap](1-collections/TreeMap.md)
+- [Collection 和 Map 的区别](1-collections/Collection和Map的区别.md)
+
+## I/O
+
+- [Java I/O 流]()
+- ⭐[BIO、NIO、AIO 的区别]()
+
+## 并发
+
+- [进程](2-concurrency/Process.md)
+- [线程](2-concurrency/Thread.md)
+  - [创建方法]()
+  - [生命周期]()
+  - [调度算法](2-concurrency/线程调度算法.md)
+  - [守护线程与用户线程的区别]()
+  - 同步
+    - ⭐[synchronized](2-concurrency/synchronized关键字.md)
+    - ⭐[ReentrantLock](2-concurrency/ReentrantLock关键字.md)
+    - ⭐[volatile](2-concurrency/volatile.md)
+    - [synchronized、ReentrantLock 与 volatile 的区别](2-concurrency/synchronized、ReentrantLock与volatile的区别.md)
+- [协程](2-concurrency/协程.md)
+- [进程、协程与线程的区别](2-concurrency/进程、协程与线程的区别.md)
+- [并行与并发的区别](2-concurrency/并行与并发的区别.md)
+- [线程池](2-concurrency/ThreadPool/README.md)
+  - [核心参数](2-concurrency/ThreadPool/ThreadPool_核心参数.md)
+  - [工作原理](2-concurrency/ThreadPool/ThreadPool_工作原理.md)
+  - [拒绝策略](2-concurrency/ThreadPool/ThreadPool_拒绝策略.md)
+- 锁
+  - [乐观锁]()
+  - [悲观锁]()
+  - [ReentrantReadWriteLock](2-concurrency/lock/ReentrantReadWriteLock.md)
+    - [StampedLock](2-concurrency/lock/StampedLock.md)
+- [AQS]()
+  - [原理]()
+- ⭐[CAS]()
+  - [原理]()
+  - [问题]()
+
+## JVM
+
+- [内存模型](3-jvm/内存模型.md)
+- [类加载机制]()
+- [垃圾回收]()
+  - [垃圾回收算法]()
+  - [垃圾回收器]()
+  - [强/软/弱/虚引用]()
+
+## 新特性
+
+- [Java 8]()
+- [Java 9]()
+  - [AOT]()
+- [Java 10]()
