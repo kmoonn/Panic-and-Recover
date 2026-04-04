@@ -1,6 +1,4 @@
-# Panic-and-Recover 
-
-🚑➡️💪
+# Panic-and-Recover 🚑➡️💪
 
 "**From panic to recovery**"
 
