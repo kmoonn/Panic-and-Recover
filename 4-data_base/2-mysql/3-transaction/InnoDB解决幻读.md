@@ -1,4 +1,4 @@
-# InnoDB 引擎如何避免幻读现象
+# InnoDB 解决幻读
 
 MySQL InnoDB 引擎的默认隔离级别虽然是「可重复读」，但是它很大程度上避免幻读现象。
 
@@ -22,4 +22,3 @@ DELETE
 通过 Next-Key Lock （记录锁 + 间隙锁）方式。
 
 对当前读自动加 Next-Key Lock，其他事务在 Next-Key Lock 锁范围内插入记录时会被阻塞，无法成功插入，从而避免了幻读现象。
-
