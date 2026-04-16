@@ -12,4 +12,4 @@
 
 像 SELECT ... FOR UPDATE, SELECT ... LOCK IN SHARE MODE, INSERT, UPDATE, DELETE 这些操作。
 
-InnoDB 使用 Next-Key Lock 来锁定扫描到的索引记录及其间的范围（间隙），防止其他事务在这个范围内插入新的记录，从而避免幻读。
+InnoDB 使用 Next-Key Lock 来锁定扫描到的索引记录及其间的范围（间隙），防止其他事务在这个范围内插入新记录，从而避免幻读。
