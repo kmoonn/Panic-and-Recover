@@ -68,11 +68,6 @@
   - [TreeMap](1-collections/TreeMap.md)
 - [Collection 和 Map 的区别](1-collections/Collection和Map的区别.md)
 
-## I/O
-
-- [Java I/O 流]()
-- ⭐[BIO、NIO、AIO 的区别]()
-
 ## 并发
 
 - [进程](2-concurrency/Process.md)
@@ -112,6 +107,11 @@
   - [垃圾回收算法]()
   - [垃圾回收器]()
   - [强/软/弱/虚引用]()
+
+## I/O
+
+- [Java I/O 流]()
+- ⭐[BIO、NIO、AIO 的区别]()
 
 ## 新特性
 
