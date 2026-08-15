@@ -1,0 +1,14 @@
+# 应用层
+
+- [HTTP](1-HTTP.md)
+- [HTTPS](2-HTTPS.md)
+- [DNS](3-DNS.md)
+- [QUIC](4-QUIC.md)
+- [GET与POST的区别](5-GET与POST的区别.md)
+- [HTTP2.0与1.0的区别](6-HTTP2.0与1.0的区别.md)
+- [HTTP1.1范围请求与断点续传](7-HTTP1.1范围请求与断点续传.md)
+- [HTTP与HTTPS的区别](8-HTTP与HTTPS的区别.md)
+- [HTTP与RPC的区别](9-HTTP与RPC的区别.md)
+- [WebSocket](10-WebSocket.md)
+- [SSE](11-SSE.md)
+- [状态码](12-状态码.md)

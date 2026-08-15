@@ -1,0 +1,40 @@
+---
+tags:
+  - Java
+  - 集合
+category: Java/集合
+---
+
+# HashTable
+
+## 数据结构
+
+- 哈希表（数组+链表），链表是为了解决哈希冲突（**拉链法**）
+- 不允许`null`键 / 值
+- 无序存储
+- 继承 `Dictionary` 接口
+
+## 特点
+
+- **线程安全**
+
+所有公共方法都用`synchronized`修饰。
+
+仅单个方法原子，复合操作仍需手动加锁。
+
+- 性能较低
+
+锁额外开销，单线程环境下使用`HashMap`替代。
+
+
+
+---
+方法全量synchronized（对象锁）
+
+并发性极差
+
+已废弃
+
+
+## 一句话总结
+> HashTable线程安全但全方法加synchronized导致并发性极差，已被ConcurrentHashMap替代。

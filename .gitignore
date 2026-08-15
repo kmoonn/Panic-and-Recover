@@ -1,3 +1,10 @@
 # IDE
 .idea
 .vscode
+.ttadk/
+specs/doc_export/
+.claude/
+.DS_Store
+ai-plugin.json
+ai-plugin-lock.json
+.mcp.json
