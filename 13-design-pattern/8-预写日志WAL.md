@@ -1,9 +1,10 @@
 ---
-category: 设计模式
+category: 设计模式/行为型
 tags:
   - 设计模式
   - 数据库
   - 分布式系统
+  - WAL
 ---
 
 # 预写日志 WAL（Write-Ahead Log）

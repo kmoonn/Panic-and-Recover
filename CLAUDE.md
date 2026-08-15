@@ -112,6 +112,7 @@ This is an **interview prep** knowledge base, not a textbook. When writing or ex
 - **Avoid textbook-level detail** — no need for source code walkthroughs, parameter tuning guides, or exhaustive flag lists unless specifically asked
 - **No implementation code** — notes should not contain full code examples; use tables, flow diagrams, and interface signatures to convey structure. Pseudocode or 3-line snippets are acceptable only when they uniquely illustrate a concept that prose cannot
 - **Cross-reference existing notes** — if a concept (e.g., fsync, LSN, 脏页) is already covered elsewhere, link to it rather than re-explaining inline
+- **Multi-language examples** — don't limit examples to Java/Spring; include Python, Go, middleware, and other ecosystems when relevant (e.g., Python @decorator for Decorator pattern, Django Middleware for Chain of Responsibility)
 
 ### Taxonomy pattern
 

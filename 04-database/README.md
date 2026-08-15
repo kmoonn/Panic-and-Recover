@@ -49,7 +49,7 @@
 ### 其他
 
 - [explain](2-MySQL/6-其他/1-explain.md)
-- [int(1)与int(10)的区别](2-MySQL/6-其他/2-int%281%29与int%2810%29的区别.md)
+- [int1与int10的区别](2-MySQL/6-其他/2-int1与int10的区别.md)
 - [MySQL存储时间日期](2-MySQL/6-其他/3-MySQL存储时间日期.md)
 - [MySQL高可用与主从同步](2-MySQL/6-其他/4-MySQL高可用与主从同步.md)
 - [MySQL数据类型](2-MySQL/6-其他/5-MySQL数据类型.md)
