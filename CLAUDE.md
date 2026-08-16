@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository overview
 
-Panic-and-Recover is a **documentation-only interview knowledge base**: ~420 Markdown notes and ~70 README index files, mainly in Chinese, covering Java backend, testing/SDET, AI/LLM, databases, OS/network, middleware, and adjacent topics.
+Panic-and-Recover is a **documentation-only interview knowledge base**: ~500 Markdown notes and ~60 README index files, mainly in Chinese, covering Java backend, testing/SDET, AI/LLM, databases, OS/network, middleware, and adjacent topics.
 
 There is **no application runtime, package manager, build system, or test framework** in this repo. Most work here is content authoring, restructuring, deduplication, renaming, and README maintenance.
 
@@ -18,7 +18,7 @@ Because this is a docs repo, the most important "build/test" commands are valida
 
 ```bash
 # Find notes by keyword
-rg -n "线程池|拒绝策略" 01-java 10-testing
+rg -n "线程池|拒绝策略" 03-java 10-testing
 
 # List all markdown files
 rg --files -g '*.md'
@@ -68,7 +68,7 @@ python3 - <<'PY'
 from pathlib import Path
 import re
 
-d = Path('01-java/2-并发')  # replace with the directory you changed
+d = Path('03-java/2-并发')  # replace with the directory you changed
 files = [p.name for p in d.glob('*.md') if p.name != 'README.md']
 numbered = [f for f in files if re.match(r'^\d+-', f)]
 unnumbered = [f for f in files if not re.match(r'^\d+-', f)]
@@ -101,6 +101,8 @@ Most leaf notes follow a consistent shape:
 
 This repository is optimized for **atomic notes**, not long handbook chapters. If a topic grows large, split it into multiple files instead of creating a monolith.
 
+**Atomic note rule**: one file = one interview question / one concept / one comparison. Do not bundle multiple distinct topics into a single file with vague names like "深入" or "进阶". Instead, create separate files with clear topic names (e.g., `2-StreamableHTTP.md`, `3-Sampling.md`, `4-MCP与Skills的区别.md` instead of `2-MCP深入.md`).
+
 ### Content style: interview-first
 
 This is an **interview prep** knowledge base, not a textbook. When writing or expanding notes:
@@ -113,45 +115,42 @@ This is an **interview prep** knowledge base, not a textbook. When writing or ex
 - **No implementation code** — notes should not contain full code examples; use tables, flow diagrams, and interface signatures to convey structure. Pseudocode or 3-line snippets are acceptable only when they uniquely illustrate a concept that prose cannot
 - **Cross-reference existing notes** — if a concept (e.g., fsync, LSN, 脏页) is already covered elsewhere, link to it rather than re-explaining inline
 - **Multi-language examples** — don't limit examples to Java/Spring; include Python, Go, middleware, and other ecosystems when relevant (e.g., Python @decorator for Decorator pattern, Django Middleware for Chain of Responsibility)
+- **Practice-grounded** — do not lecture in abstraction or stack concepts without context. Every note should connect to real applications, production use cases, or the user's own project experience from `00-resume/`. Dry theory without a "where have I used this" or "where does this appear in production" anchor is a signal to rework the note.
 
 ### Taxonomy pattern
 
-The content is organized primarily by numbered top-level topic directories (currently 18 directories, `00`–`19` with gaps):
+The content is organized primarily by numbered top-level topic directories (currently 16 directories, `00`–`15` plus `other`):
 
-- `00-written-test/` — 笔试
-- `01-java/` — Java
-- `02-computer-network/` — 计算机网络
-- `03-operating-system/` — 操作系统
-- `04-database/` — 数据库
-- `05-spring/` — Spring
-- `06-security/` — 安全
-- `08-python/` — Python
-- `09-ai/` — AI/LLM
+- `00-resume/` — 秋招备战
+- `01-written/` — 笔试
+- `02-python/` — Python
+- `03-java/` — Java
+- `04-network/` — 计算机网络
+- `05-os/` — 操作系统
+- `06-linux/` — Linux
+- `07-database/` — 数据库
+- `08-spring/` — Spring
+- `09-middleware/` — 中间件
 - `10-testing/` — 测试
-- `11-containerization/` — 容器化
-- `12-frontend/` — 前端
-- `13-design-pattern/` — 设计模式
-- `14-interview/` — 面试
-- `15-dev-tools/` — 开发工具
-- `16-golang/` — Go语言
-- `17-miniprogram/` — 微信小程序
-- `18-api-design/` — API设计
-- `19-middleware/` — 中间件
+- `11-frontend/` — 前端
+- `12-security/` — 安全
+- `13-ai/` — AI/LLM
+- `14-design-pattern/` — 设计模式
+- `15-golang/` — Go语言
+- `other/` — 其他（容器化/面试/开发工具/小程序/API设计等零散主题）
 
 Those topic directories often have numbered Chinese subdirectories for second-level grouping, for example:
 
+- Written → Algo / SQL
 - Java → 基础 / 集合 / 并发 / JVM
-- Written test → Algo / SQL
+- Network → 基础 / 应用层 / 传输层 / 网络层 / 数据链路层 / 面试热点
 - Database → MySQL / Redis / MongoDB
-- AI → 基础 / Agent / RAG / MCP / Skills / Prompt / 其他
-- Testing → 基础 / 场景题 / 接口测试 / 性能测试 / 框架 / Midscene
-- Computer network → 基础 / 应用层 / 传输层 / 网络层 / 数据链路层 / 面试热点
 - Spring → 核心 / SpringBoot / SpringCloud / 事务
-- Containerization → Docker / K8s
-- Dev tools → Maven / MyBatis
+- AI → 基础 / Agent / RAG / MCP / Skill / Prompt / 其他
+- Testing → 基础 / 场景题 / 接口测试 / 性能测试 / 框架 / Midscene
 - Middleware → 消息队列
 
-Some subdirectories start from `0-` (e.g., `01-java/0-基础`, `02-computer-network/0-基础`) while most start from `1-`. Both exist in the wild; match whichever convention the surrounding directory uses.
+Some subdirectories start from `0-` (e.g., `03-java/0-基础`, `04-network/0-基础`) while most start from `1-`. Both exist in the wild; match whichever convention the surrounding directory uses.
 
 When deciding where a new note belongs, follow the existing topic taxonomy instead of creating a new bucket too early.
 
@@ -164,9 +163,9 @@ README files here are not decorative. They are the repository's **manual navigat
 - They should list **non-empty content files only**.
 - Broken README links are one of the highest-value failures to check for after edits.
 
-### PROMPT.md defines ingestion behavior
+### PROMPT.md
 
-`PROMPT.md` is not just a note; it defines the intended behavior when converting raw interview material into this knowledge base:
+If a `PROMPT.md` exists in the repo, it defines the intended behavior when converting raw interview material into this knowledge base:
 
 - extract only what is present in the source material
 - keep the prescribed taxonomy
@@ -178,7 +177,7 @@ If you are reorganizing or consolidating interview notes, follow `PROMPT.md` as 
 
 ### Special content types
 
-- `14-interview/2-牛客面经/` uses **date-stamped records** (`YYYYMMDD.md`) rather than numbered topic files.
+- `14-interview/2-牛客面经/` uses **date-stamped records** (`YYYYMMDD.md`) rather than numbered topic files. These files are now located in `other/` with a `牛客面经-` prefix.
 - Comparison notes are expected to live alongside single-topic notes, e.g. both `TCP.md`-style files and `TCP与UDP的区别.md`-style files can coexist.
 - The repository is mostly consistent about numbering, but some legacy pockets may still need cleanup. Treat mixed numbering as debt to fix, not as the pattern to copy.
 
@@ -200,7 +199,8 @@ These naming rules are important because the repo is navigation-heavy and link-h
 ### Files
 
 - **One file, one topic**.
-- If the directory uses numbering, use `1-xxx.md`, not `1. xxx.md`.
+- **No numeric prefix** on note files — the topic name itself is the identifier (e.g., `Transformer架构.md`, `MCP架构.md`, not `5-Transformer架构.md`).
+- **No separate "介绍" note** — the directory's `README.md` serves as the introduction/overview for that topic. Do not create a standalone `xxx介绍.md` that merely restates what the README should contain.
 - Use concise topic names.
 - Use `与` for two-item comparisons and `、` for multi-item enumerations.
 - **Never use `和`** in comparison filenames.
@@ -235,10 +235,23 @@ If there is no code to run, a change is only really finished once the README gra
 
 The repository is bilingual by layer:
 
-- **Top-level directory names**: English (e.g., `01-java`, `09-ai`, `19-middleware`)
+- **Top-level directory names**: English (e.g., `03-java`, `13-ai`, `09-middleware`)
 - **Subdirectory names**: Chinese (e.g., `0-基础`, `2-并发`, `1-消息队列`)
 - **File names**: Chinese topic names (e.g., `HashSet.md`, `线程池.md`, `TCP与UDP的区别.md`)
 - **File content**: Chinese, with English technical terms inline (e.g., "JVM 的 **GC Root** 包括……")
 - **README files**: Chinese descriptions and headings
 
 Match the surrounding language when adding new content.
+
+## Sub-projects
+
+### 00-resume/
+
+The interview-prep project (秋招备战) under `00-resume/` with its own AGENTS.md. It contains:
+
+- **resume-notes/**: Deep-dive notes per internship/project for anti-follow-up readiness (字节/快手/讯飞/中国能建RAG/武理工竞赛系统)
+- **job-targets/**: Per-company prep (currently 百度)
+
+Note: the `fundamentals/` flash-card files (八股速记) were previously here but have been integrated into the main knowledge base across the corresponding topic directories.
+
+When learning a topic and writing a note in the main knowledge base, **cross-reference the user's project experience** from 00-resume to add interview-relevant context (e.g., Transformer → RAG platform model routing; Observer pattern → FastExcel AnalysisEventListener; Prompt engineering → API Testing Agent PRD→Checklist).

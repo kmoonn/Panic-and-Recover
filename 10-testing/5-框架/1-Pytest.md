@@ -336,6 +336,21 @@ class TestUserAPI:
 
 ---
 
+## 八股速记
+
+**Q: pytest vs JUnit（测试框架核心）**
+
+| 维度 | pytest（Python） | JUnit（Java） |
+|---|---|---|
+| 断言 | 原生 `assert`，报错信息友好 | `assertEquals` 等 API / `assertThat` |
+| 前后置 | `fixture`（依赖注入式，可复用/分层） | `@BeforeEach`/`@AfterEach`/`@BeforeAll` |
+| 参数化 | `@pytest.mark.parametrize` | `@ParameterizedTest` |
+| 组织 | 函数/类均可，自动发现 `test_*` | 类 + `@Test` 方法 |
+
+**⭐ 加分/易错**：
+- pytest 的 **fixture** 是灵魂：`scope`（function/class/module/session）控制复用粒度，`conftest.py` 放共享 fixture，`yield` 做 setup/teardown。
+- JUnit 5 用 `@ExtendWith` 集成 Mockito/Spring Test。
+
 ## 一句话总结
 
 Pytest 是 Python 事实标准的测试框架，核心优势是简洁的 assert 断言、灵活的 fixture 机制（支持依赖注入和多级作用域）、参数化驱动、丰富插件生态，面试高频考点为 fixture 与 setup/teardown 的区别、conftest.py 共享机制、以及接口自动化测试实践。
