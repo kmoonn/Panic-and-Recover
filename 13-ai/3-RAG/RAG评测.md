@@ -2,10 +2,35 @@
 tags:
   - AI
   - RAG
+  - 评测
 category: AI/RAG
 ---
 
-# RAG 评测指标
+# RAG 评测
+
+## 为什么需要评估 RAG
+
+RAG 系统不是"检索+生成"就完事了，需要量化评估：
+- 检索是否找对了文档？（召回质量）
+- 生成是否忠实于检索内容？（防幻觉）
+- 答案是否有用？（用户体验）
+
+没有评估，就无法迭代优化——你不知道是 Chunk 切分的问题、Embedding 模型的问题、还是 Prompt 的问题。
+
+---
+
+## 评估框架：RAGAS
+
+**RAGAS**（Retrieval Augmented Generation Assessment）是最主流的 RAG 评估框架，定义了核心指标：
+
+| 指标 | 全称 | 评估什么 | 依赖 |
+|------|------|---------|------|
+| **Faithfulness** | 忠实度 | 答案是否仅基于检索内容，无幻觉 | Answer + Contexts |
+| **Answer Relevancy** | 答案相关性 | 答案是否切题 | Question + Answer |
+| **Context Precision** | 上下文精确度 | 检索到的内容中有多少是相关的 | Question + Contexts |
+| **Context Recall** | 上下文召回率 | 相关内容是否都被检索到了 | Question + Ground Truth |
+
+---
 
 ## 指标体系总览
 
@@ -272,7 +297,89 @@ Answer Similarity = cos(E(answer), E(ground_truth))
 
 ---
 
-## 三、指标选型指南
+## 代码示例
+
+```python
+from ragas import evaluate
+from ragas.metrics import (
+    faithfulness,
+    answer_relevancy,
+    context_precision,
+    context_recall,
+)
+from datasets import Dataset
+
+# 准备评估数据
+data = {
+    "question": [
+        "什么是 RAG？",
+        "RAG 如何减少幻觉？",
+    ],
+    "answer": [
+        "RAG 是检索增强生成，通过检索外部知识辅助 LLM 生成答案",
+        "RAG 让 LLM 基于检索到的真实文档生成答案，而非仅依赖参数化记忆",
+    ],
+    "contexts": [
+        ["RAG 是 Retrieval-Augmented Generation 的缩写..."],
+        ["RAG 通过检索外部文档为 LLM 提供事实依据，减少幻觉..."],
+    ],
+    "ground_truth": [
+        "RAG 通过检索外部知识库增强 LLM 生成能力",
+        "RAG 为 LLM 提供检索到的事实依据，避免编造",
+    ],
+}
+
+dataset = Dataset.from_dict(data)
+
+# 评估
+result = evaluate(
+    dataset,
+    metrics=[
+        faithfulness,
+        answer_relevancy,
+        context_precision,
+        context_recall,
+    ],
+)
+
+print(result)
+# {'faithfulness': 0.92, 'answer_relevancy': 0.88, ...}
+```
+
+---
+
+## 分层评估与瓶颈定位
+
+```
+┌─────────────────────────────────────┐
+│         端到端评估（整体效果）         │
+│  Answer Relevancy / 用户满意度       │
+├─────────────────┬───────────────────┤
+│   检索层评估     │    生成层评估       │
+│ Context Recall  │  Faithfulness     │
+│ Context Prec.   │  Answer Relevancy │
+│ Hit Rate / MRR  │  BLEU / ROUGE     │
+├─────────────────┴───────────────────┤
+│         组件级评估（定位瓶颈）         │
+│  Chunk 策略 / Embedding / ReRank    │
+│  Prompt 模板 / LLM 选择             │
+└─────────────────────────────────────┘
+```
+
+**定位瓶颈的思路**：如果 Context Recall 低 → 检索召回不足，优化 Chunk/Embedding；如果 Faithfulness 低 → 生成幻觉，优化 Prompt 或换模型；如果 Context Recall 高但 Answer Relevancy 低 → Prompt 问题。
+
+### 指标组合诊断
+
+| 症状 | 诊断 | 优化方向 |
+|------|------|---------|
+| Recall 高 + Faithfulness 低 | 检索到了但生成不忠实 | 优化 Prompt（加防幻觉指令） |
+| Recall 低 + Faithfulness 高 | 检索不够但没幻觉 | 优化检索（换 Embedding / 加 ReRank） |
+| Recall 高 + Precision 低 | 召回了但噪声多 | 加 ReRank / 减少 TopK |
+| Answer Relevancy 低 + Faithfulness 高 | 忠实但偏题 | 优化 Prompt（强调切题） |
+
+---
+
+## 指标选型指南
 
 ### 按 RAG 优化阶段选指标
 
@@ -283,15 +390,6 @@ Answer Similarity = cos(E(answer), E(ground_truth))
 | 加 ReRank | Context Precision ↑, NDCG ↑ | 相关文档排更前 |
 | 优化 Prompt | Faithfulness ↑ | 减少幻觉 |
 | 端到端验证 | Answer Relevancy ↑, 业务指标 ↑ | 整体效果提升 |
-
-### 指标组合诊断
-
-| 症状 | 诊断 | 优化方向 |
-|------|------|---------|
-| Recall 高 + Faithfulness 低 | 检索到了但生成不忠实 | 优化 Prompt（加防幻觉指令） |
-| Recall 低 + Faithfulness 高 | 检索不够但没幻觉 | 优化检索（换 Embedding / 加 ReRank） |
-| Recall 高 + Precision 低 | 召回了但噪声多 | 加 ReRank / 减少 TopK |
-| Answer Relevancy 低 + Faithfulness 高 | 忠实但偏题 | 优化 Prompt（强调切题） |
 
 ### 快速参考卡
 
@@ -314,7 +412,7 @@ Answer Similarity = cos(E(answer), E(ground_truth))
 
 **Faithfulness**。RAG 的核心价值是减少幻觉，如果答案不忠实于检索内容，RAG 就失去了意义。其次是 Context Recall——检索不到正确的文档，再好的生成也无用。
 
-### 这些指标需要人工标注吗？
+### RAG 评估需要标注数据吗？
 
 | 指标 | 是否需要 GT | 说明 |
 |------|-----------|------|
@@ -326,6 +424,24 @@ Answer Similarity = cos(E(answer), E(ground_truth))
 | Answer Similarity | 需要 | 需要参考答案 |
 
 实践做法：**少量人工标注（50~100 条）+ LLM 自动评估其余**。
+
+### 如何做 A/B 实验对比两个 RAG 方案？
+
+| 步骤 | 说明 |
+|------|------|
+| 1. 固定测试集 | 准备 50~200 条 Q-A 对 |
+| 2. 控制变量 | 每次只改一个组件（如 Embedding 模型） |
+| 3. 跑评估 | 用 RAGAS 四指标 + Hit Rate |
+| 4. 统计显著性 | 同一测试集上对比分数差异 |
+
+### 评估发现 Faithfulness 低怎么办？
+
+| 可能原因 | 优化方向 |
+|---------|---------|
+| Prompt 未强调"仅根据检索内容回答" | 加防幻觉指令 |
+| 检索内容与问题不相关 | 优化检索（换 Embedding / 加 ReRank） |
+| LLM 参数化记忆过强（"太聪明"） | 降 temperature / 换更听话的模型 |
+| 检索内容太短，信息不足 | 增大 chunk_size / 返回更多 chunk |
 
 ### MRR 和 NDCG 怎么选？
 
@@ -340,4 +456,4 @@ Answer Similarity = cos(E(answer), E(ground_truth))
 
 ## 一句话总结
 
-> RAG 评测指标分三层：检索层看 Context Recall（召回率）、Context Precision（精确度）、Hit Rate/MRR/NDCG（排序质量），生成层看 Faithfulness（忠实度，最重要）、Answer Relevancy（相关性），组合诊断定位瓶颈——Recall 低优化检索，Faithfulness 低优化 Prompt，Precision 低加 ReRank。
+> RAG 评测分三层：检索层看 Context Recall（召回率）、Context Precision（精确度）、Hit Rate/MRR/NDCG（排序质量），生成层看 Faithfulness（忠实度，最重要）、Answer Relevancy（相关性），组合诊断定位瓶颈——Recall 低优化检索，Faithfulness 低优化 Prompt，Precision 低加 ReRank。

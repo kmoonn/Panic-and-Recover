@@ -8,25 +8,29 @@
 
 ## Agent
 
-- [Agent五大核心要素](2-Agent/1-Agent五大核心要素.md)
-- [Agent范式](2-Agent/2-Agent范式.md)
-- [ReAct模式](2-Agent/3-ReAct模式.md)
-- [大模型与Agent的区别](2-Agent/4-大模型与Agent的区别.md)
-- [Agent性能分析](2-Agent/5-Agent性能分析.md)
-- [LangChain](2-Agent/6-LangChain.md)
-- [LangGraph与Python脚本的区别](2-Agent/7-LangGraph与Python脚本的区别.md)
-- [测试Agent难点与解决方案](2-Agent/8-测试Agent难点与解决方案.md)
+- [Agent五大核心要素](2-Agent/Agent五大核心要素.md)
+- [Agent范式](2-Agent/Agent范式.md)
+- [ReAct模式](2-Agent/ReAct模式.md)
+- [大模型与Agent的区别](2-Agent/大模型与Agent的区别.md)
+- [Agent性能分析](2-Agent/Agent性能分析.md)
+- [Agent评测方法](2-Agent/Agent评测方法.md)
+- [Agent评测指标](2-Agent/Agent评测指标.md)
+- [Agent可靠性](2-Agent/Agent可靠性.md)
+- [LangChain](2-Agent/LangChain.md)
+- [LangGraph与Python脚本的区别](2-Agent/LangGraph与Python脚本的区别.md)
+- [测试Agent难点与解决方案](2-Agent/测试Agent难点与解决方案.md)
 
 ## RAG
 
-- [Chunk切分与提示词模板](3-RAG/1-Chunk切分与提示词模板.md)
-- [向量模型](3-RAG/2-向量模型.md)
-- [LLM幻觉](3-RAG/3-LLM幻觉.md)
-- [TopK与ReRank的区别](3-RAG/4-TopK与ReRank的区别.md)
-- [评估RAG的效果](3-RAG/5-评估RAG的效果.md)
-- [提示词增强召回](3-RAG/6-提示词增强召回.md)
-- [RAG评测指标](3-RAG/7-RAG评测指标.md)
-- [RAG链路排查与问题定位](3-RAG/8-RAG链路排查与问题定位.md)
+- [Chunk切分](3-RAG/Chunk切分.md)
+- [提示词模板](3-RAG/提示词模板.md)
+- [向量模型](3-RAG/向量模型.md)
+- [向量数据库](3-RAG/向量数据库.md)
+- [LLM幻觉](3-RAG/LLM幻觉.md)
+- [TopK与ReRank的区别](3-RAG/TopK与ReRank的区别.md)
+- [查询增强](3-RAG/查询增强.md)
+- [RAG评测](3-RAG/RAG评测.md)
+- [RAG链路排查](3-RAG/RAG链路排查.md)
 
 ## MCP
 
