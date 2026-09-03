@@ -1,4 +1,4 @@
 # 锁
 
-- [StampedLock](1-StampedLock.md)
-- [ReentrantReadWriteLock](2-ReentrantReadWriteLock.md)
+- [StampedLock](StampedLock.md)
+- [ReentrantReadWriteLock](ReentrantReadWriteLock.md)

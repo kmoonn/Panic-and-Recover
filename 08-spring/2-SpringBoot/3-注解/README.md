@@ -1,3 +1,3 @@
 # 注解
 
-- [Autowired与Resource的区别](1-Autowired与Resource的区别.md)
+- [Autowired与Resource的区别](Autowired与Resource的区别.md)

@@ -27,3 +27,5 @@
 
 - [Skill结构](Skill结构.md) — Prompt Template + Tool Bindings + I/O Schema
 - [渐进式披露机制](渐进式披露机制.md) — 全量加载索引→匹配→按需展开，避免上下文爆炸
+- [Skill命中与冲突消解](Skill命中与冲突消解.md) — 相似 Skill 如何管理、防止误命中
+- [Skill自进化](Skill自进化.md) — 运行时反馈驱动 Skill 迭代的闭环

@@ -1,3 +1,3 @@
 # 事务
 
-- [Transactional原理](1-Transactional原理.md)
+- [Transactional原理](Transactional原理.md)
