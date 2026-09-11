@@ -19,6 +19,7 @@
 - [LangChain](2-Agent/LangChain.md)
 - [LangGraph与Python脚本的区别](2-Agent/LangGraph与Python脚本的区别.md)
 - [测试Agent难点与解决方案](2-Agent/测试Agent难点与解决方案.md)
+- [AgentHarnessEngineering](2-Agent/AgentHarnessEngineering.md)
 
 ## RAG
 
