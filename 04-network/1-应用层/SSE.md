@@ -7,8 +7,6 @@ category: 计算机网络/应用层
 
 # SSE
 
-# SSE
-
 SSE（Server-Sent Events）是基于 HTTP 的**单向服务端推送**协议。
 
 ## 核心特点

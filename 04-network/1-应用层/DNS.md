@@ -7,8 +7,6 @@ category: 计算机网络/应用层
 
 # DNS 域名系统
 
-# DNS 域名系统
-
 DNS（Domain Name System）将**域名解析为 IP 地址**。
 
 ## 四层结构
